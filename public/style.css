@@ -1,0 +1,21 @@
+body{
+    background-color: #43658b;
+}
+
+.main-navbar{
+    padding: 1.2rem 2rem;
+}
+
+.navbar-logo{
+    font-size: 1.5rem;
+
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+
+    user-select: none;
+}
+
+.navbar-logo--image{
+    font-size: 3rem;
+}

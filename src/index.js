@@ -6,9 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import Navbar from 'react-bootstrap/Navbar';
 
 ReactDOM.render(
-    <Navbar bg="dark">
-        <Navbar.Brand className="text-light">
-            <i class="far fa-laugh-beam"></i>mbitbit
+    <Navbar bg="dark" className="main-navbar">
+        <Navbar.Brand className="navbar-logo text-primary">
+            <i class="far fa-laugh-beam navbar-logo--image"></i>mbitbit
         </Navbar.Brand>
     </Navbar>
     ,
