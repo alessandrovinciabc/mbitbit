@@ -3,7 +3,17 @@ body{
 }
 
 .main-navbar{
+    display: flex;
+    align-items: center;
+    height: 15vh;
     padding: 1.2rem 2rem;
+}
+
+.main-container{
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-logo{
