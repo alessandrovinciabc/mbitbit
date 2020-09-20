@@ -15,9 +15,15 @@ ReactDOM.render(
             </Navbar.Brand>
         </Navbar>
         <Container className="main-container">
-            <Card className="text-center">
-                <Card.Header>Name of the song...</Card.Header>
+            <Card className="text-center music-player">
+                <Card.Header>
+                    Tipple Chipper<br/>
+                    www.dl-sounds.com(Author)
+                </Card.Header>
                 <Card.Body>
+                    <audio controls loop>
+                        <source src="./tracks/tipplechipper.wav" type="audio/wav" />
+                    </audio>
                 </Card.Body>
             </Card>
         </Container>

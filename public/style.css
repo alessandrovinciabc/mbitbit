@@ -29,3 +29,8 @@ body{
 .navbar-logo--image{
     font-size: 3rem;
 }
+
+.music-player{
+    width: 30%;
+    min-width: 350px;
+}
