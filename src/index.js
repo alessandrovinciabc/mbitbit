@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
+
 ReactDOM.render(
     <React.Fragment>
         <Navbar bg="dark" className="main-navbar">
