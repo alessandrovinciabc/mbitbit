@@ -7,30 +7,41 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
-
-ReactDOM.render(
-    <React.Fragment>
-        <Navbar bg="dark" className="main-navbar">
-            <Navbar.Brand className="navbar-logo text-primary">
-                <i className="far fa-laugh-beam navbar-logo--image"></i>mbitbit
-            </Navbar.Brand>
-        </Navbar>
-        <Container className="main-container">
-            <Card className="text-center music-player">
-                <Card.Header>
-                    Tipple Chipper<br/>
-                    www.dl-sounds.com(Author)
-                </Card.Header>
-                <Card.Body>
-                    <audio controls loop>
-                        <source src="./tracks/tipplechipper.wav" type="audio/wav" />
-                    </audio>
-                </Card.Body>
-            </Card>
-        </Container>
-    </React.Fragment>,
-    document.getElementById('root')
-);
+fetch('/users')
+    .then((result) => result.json())
+    .then((value) => {
+        console.log(value);
+        ReactDOM.render(
+            <React.Fragment>
+                <Navbar bg="dark" className="main-navbar">
+                    <Navbar.Brand className="navbar-logo text-primary">
+                        <i className="far fa-laugh-beam navbar-logo--image"></i>
+                        mbitbit
+                    </Navbar.Brand>
+                </Navbar>
+                <Container className="main-container">
+                    <Card className="text-center music-player">
+                        <Card.Header>
+                            {value.test}
+                            <br />
+                            Tipple Chipper
+                            <br />
+                            www.dl-sounds.com(Author)
+                        </Card.Header>
+                        <Card.Body>
+                            <audio controls loop>
+                                <source
+                                    src="./tracks/tipplechipper.wav"
+                                    type="audio/wav"
+                                />
+                            </audio>
+                        </Card.Body>
+                    </Card>
+                </Container>
+            </React.Fragment>,
+            document.getElementById('root')
+        );
+    });
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
