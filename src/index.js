@@ -5,8 +5,8 @@ import * as serviceWorker from './serviceWorker';
 //Bootstrap
 import Container from 'react-bootstrap/Container';
 
-import Header from './Header';
-import MusicPlayer from './MusicPlayer';
+import Header from './components/Header';
+import MusicPlayer from './components/MusicPlayer';
 
 async function main() {
     const songListRequest = await fetch('http://localhost:3000/api/songlist');
