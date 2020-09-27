@@ -12,18 +12,40 @@ async function main() {
     const songListRequest = await fetch('http://localhost:3000/api/songlist');
     const availableSongs = await songListRequest.json();
 
+    class App extends React.Component {
+        state = {
+            selectedSong: '',
+        };
+
+        render() {
+            return (
+                <React.Fragment>
+                    <ul>
+                        {availableSongs.map((song) => (
+                            <li
+                                onClick={() => {
+                                    this.setState({ selectedSong: song });
+                                    document.getElementById("audioPlayer").load();
+                                }}
+                            >
+                                {song}
+                            </li>
+                        ))}
+                    </ul>
+                    <MusicPlayer
+                        songSrc={'./tracks/' + this.state.selectedSong}
+                        fileType={this.state.selectedSong.split('.')[1]}
+                    />
+                </React.Fragment>
+            );
+        }
+    }
+
     ReactDOM.render(
         <React.Fragment>
             <Header />
             <Container className="main-container">
-                <ul>
-                    {availableSongs.map((song)=>(<li>{song}</li>))}
-                </ul>
-                <MusicPlayer
-                    songName="Tipplechipper"
-                    authorName="..."
-                    songSrc="./tracks/tipplechipper.wav"
-                />
+                <App />
             </Container>
         </React.Fragment>,
         document.getElementById('root')

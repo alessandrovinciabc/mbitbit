@@ -6,16 +6,11 @@ class MusicPlayer extends React.Component {
     render() {
         return (
             <Card className="text-center music-player">
-                <Card.Header>
-                    {this.props.songName}
-                    <br />
-                    {this.props.authorName}
-                </Card.Header>
                 <Card.Body>
-                    <audio controls loop>
+                    <audio controls loop id="audioPlayer">
                         <source
                             src={this.props.songSrc}
-                            type="audio/wav"
+                            type={"audio/" + this.props.fileType}
                         />
                     </audio>
                 </Card.Body>
