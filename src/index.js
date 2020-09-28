@@ -20,7 +20,11 @@ async function main() {
         render() {
             return (
                 <React.Fragment>
-                    <ul>
+                    <MusicPlayer
+                        songSrc={'./tracks/' + this.state.selectedSong}
+                        fileType={this.state.selectedSong.split('.')[1]}
+                    />
+                    <ul className="song-list">
                         {availableSongs.map((song) => (
                             <li
                                 onClick={() => {
@@ -32,10 +36,6 @@ async function main() {
                             </li>
                         ))}
                     </ul>
-                    <MusicPlayer
-                        songSrc={'./tracks/' + this.state.selectedSong}
-                        fileType={this.state.selectedSong.split('.')[1]}
-                    />
                 </React.Fragment>
             );
         }

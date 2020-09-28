@@ -1,22 +1,24 @@
-body{
+body {
     background-color: #43658b;
 }
 
-.main-navbar{
+.main-navbar {
     display: flex;
     align-items: center;
     height: 15vh;
     padding: 1.2rem 2rem;
 }
 
-.main-container{
+.main-container {
     height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    flex-direction: column;
 }
 
-.navbar-logo{
+.navbar-logo {
     font-size: 1.5rem;
 
     background-color: white;
@@ -26,11 +28,39 @@ body{
     user-select: none;
 }
 
-.navbar-logo--image{
+.navbar-logo--image {
     font-size: 3rem;
 }
 
-.music-player{
+.music-player {
     width: 30%;
     min-width: 350px;
+}
+
+.song-list {
+    text-align: center;
+    list-style-type: none;
+
+    margin: 5px;
+    padding: 0;
+
+    overflow: auto;
+    height: 120px;
+}
+
+.song-list li {
+    border-radius: 5px;
+    background-color: #93a0af;
+
+    padding: 5px;
+    margin: 2px;
+}
+
+.song-list li:hover {
+    cursor: pointer;
+    background-color: #7691af;
+}
+
+.song-list li:active {
+    background-color: #4276b3;
 }
