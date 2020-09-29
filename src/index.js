@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 
 import Header from './components/Header';
 import MusicPlayer from './components/MusicPlayer';
+import UploadForm from './components/UploadForm';
 
 async function main() {
     const songListRequest = await fetch('http://localhost:3000/api/songlist');
@@ -29,7 +30,9 @@ async function main() {
                             <li
                                 onClick={() => {
                                     this.setState({ selectedSong: song });
-                                    document.getElementById("audioPlayer").load();
+                                    document
+                                        .getElementById('audioPlayer')
+                                        .load();
                                 }}
                             >
                                 {song}
@@ -45,6 +48,7 @@ async function main() {
         <React.Fragment>
             <Header />
             <Container className="main-container">
+                <UploadForm />
                 <App />
             </Container>
         </React.Fragment>,
