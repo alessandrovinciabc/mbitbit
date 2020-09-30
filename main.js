@@ -10,7 +10,7 @@ const multer = require('multer');
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './build/tracks/');
+        cb(null, './tracks/');
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname);
@@ -20,6 +20,7 @@ let storage = multer.diskStorage({
 let upload = multer({ storage: storage });
 
 app.use(express.static(path.join(__dirname, 'build')));
+app.use('/tracks', express.static(path.join(__dirname, 'tracks')));
 
 app.post('/upload', upload.single('newTrack'), (req, res) => {
     console.log(req.file, req.body);
@@ -27,7 +28,7 @@ app.post('/upload', upload.single('newTrack'), (req, res) => {
 });
 
 app.get('/api/songlist', (req, res) => {
-    const musicDirectory = './build/tracks/';
+    const musicDirectory = './tracks/';
 
     fs.readdir(musicDirectory, (err, files) => {
         if (err) {
