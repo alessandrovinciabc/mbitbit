@@ -1,6 +1,6 @@
 # mbitbit
 
-A simple web music player made with <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/800px-React-icon.svg.png" style="width: 25px"> and *Express*.
+A simple web music player made with *React* and *Express*.
 
 ## Features
 
