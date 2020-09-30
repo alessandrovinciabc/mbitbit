@@ -48,7 +48,7 @@ async function main() {
         <React.Fragment>
             <Header />
             <Container className="main-container">
-                <UploadForm />
+                <UploadForm className="main-form"/>
                 <App />
             </Container>
         </React.Fragment>,
