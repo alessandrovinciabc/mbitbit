@@ -13,3 +13,10 @@ yarn-error.log*
 /.changelog
 .npm/
 yarn.lock
+
+*.mp3
+*.wav
+*.ogg
+!beatthee.mp3
+!bitbitloop.mp3
+!tipplechipper.wav
